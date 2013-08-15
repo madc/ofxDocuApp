@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
+#include "threadedCam.h"
 
 class testApp : public ofBaseApp{
 
@@ -19,19 +20,7 @@ class testApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
+        threadedCam tCam;
+    
         string setupPath();
-		
-        ofVideoGrabber 		vidGrabber;
-    
-        ofImage drawImage;
-        string recStatus;
-        string path;
-
-        int camWidth;
-        int camHeight;
-    
-        int lastGrab;
-        int interval;
-    
-        int savedFrames;
 };
