@@ -37,12 +37,23 @@ void testApp::keyPressed(int key){
 
 //--------------------------------------------------------------
 void testApp::keyReleased(int key){
+    // start/pause recording w. spacebar
     if(key == 32) {
         if(tCam.isThreadRunning()) {
             tCam.stop();
         } else {
             tCam.start();
         }
+    }
+
+    //reset recording, start new folder w. r-key
+    if(key == 114) {
+        tCam.lock();
+        
+        tCam.path = "";
+        tCam.savedFrames = 0;
+        
+        tCam.unlock();
     }
 }
 
