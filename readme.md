@@ -1,8 +1,10 @@
 # ofxDocuApp
 
 Simple application to document the process of a work by saving a photo in a recurring interval.
-Use the spacebar to start/pause the recording. The pictures are saved in daily-based structure (data/rec/2013-08-08, data/rec/2013-08-08_1, ...).
-The 'r'-key allows to reset the recording and start with a new folder.
+Use the <kbd>spacebar</kbd> to start/pause the recording. The pictures are saved in daily-based structure (data/rec/2013-08-08, data/rec/2013-08-08_1, ...).
+The <kbd>r</kbd>-key allows to reset the recording and start with a new folder.
+
+The code has been successfully compiled on Mac OS X 10.9 using Xcode and on Linux using [makefiles](http://openframeworks.cc/setup/linux-codeblocks/#makefiles).
 
 ## Acknowledgements
 
