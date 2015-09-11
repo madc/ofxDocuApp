@@ -26,3 +26,4 @@ example-output/obj
 *.vcxproj.user
 
 bin
+obj
