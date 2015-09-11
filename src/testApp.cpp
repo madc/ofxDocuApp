@@ -4,10 +4,10 @@
 void testApp::setup(){
     ofSetFrameRate(26);
     ofBackground(255, 255, 255);
-    
+
     tCam.interval   = 1000; // in ms
     tCam.deviceName = "Logitech Camera";
-    
+
 	tCam.camWidth 		= 1280;
 	tCam.camHeight 		= 720;
 }
@@ -17,11 +17,11 @@ void testApp::update(){
 }
 
 //--------------------------------------------------------------
-void testApp::draw(){        
+void testApp::draw(){
     ofSetColor(0);
     ofDrawBitmapString("Framerate/Frames saved: " + ofToString((int)ofGetFrameRate()) + "/" + ofToString(tCam.savedFrames), 20, 20);
     ofDrawBitmapString("Status:", 20, 40);
-    
+
     if(tCam.isThreadRunning()) {
         ofSetColor(255, 0, 0);
         ofDrawBitmapString("RECORDING", 80, 40);
@@ -48,12 +48,7 @@ void testApp::keyReleased(int key){
 
     //reset recording, start new folder w. r-key
     if(key == 114) {
-        tCam.lock();
-        
-        tCam.path = "";
-        tCam.savedFrames = 0;
-        
-        tCam.unlock();
+        tCam.reset();
     }
 }
 
@@ -88,6 +83,6 @@ void testApp::gotMessage(ofMessage msg){
 }
 
 //--------------------------------------------------------------
-void testApp::dragEvent(ofDragInfo dragInfo){ 
+void testApp::dragEvent(ofDragInfo dragInfo){
 
 }
